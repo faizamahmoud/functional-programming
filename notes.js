@@ -5,7 +5,7 @@
  * continue, goto) which make the code harder to follow.
  * Functional programming requires us to write pure, deterministic functions which are less likely to 
  * be buggy.**/
-
+//  functional programming, functional programming is all about separation of concerns, it is a way of making sure our code does one thing its good at and ensuring data are not mutated, this makes it the choice of most developers.
 
 /** Pure functions take some input and give a fixed output. Also, they cause no side effects in the outside 
  * world. 
@@ -61,8 +61,8 @@ On the other hand, Array.prototype.forEach, Array.prototype.push are impure func
 
 array.filter(condition);
 
-const filterEven = x => x%2 === 0;  
-[1, 2, 3].filter(filterEven);  
+const filterEven = x => x % 2 === 0;
+[1, 2, 3].filter(filterEven);
 // [2]
 
 //* MAP - maps each item of array to a function and creates a new array based on the return values of the 
@@ -71,8 +71,8 @@ const filterEven = x => x%2 === 0;
 
 array.map(mapper)
 
-const double = x => 2 * x;  
-[1, 2, 3].map(double);  
+const double = x => 2 * x;
+[1, 2, 3].map(double);
 // [2, 4, 6]
 
 
@@ -81,18 +81,18 @@ const double = x => 2 * x;
 //* new value. It is called like this for all values in the array, one after another.
 //* array.reduce(reducer);
 
-const sum = (accumulatedSum, arrayItem) => accumulatedSum + arrayItem  
+const sum = (accumulatedSum, arrayItem) => accumulatedSum + arrayItem
 [1, 2, 3].reduce(sum);
 // 6
 
 
-export const createWidgetFactory = ({parser}) => ({
-    configurationRequests,widgetMaker
-}) => async (event, context) => {
-    const ctx = createCtx(event, context)
-    const config = await getConfig(configurationRequests, ctx)
-    return widgetMaker(event, context)
-}
+// export const createWidgetFactory = ({parser}) => ({
+//     configurationRequests,widgetMaker
+// }) => async (event, context) => {
+//     const ctx = createCtx(event, context)
+//     const config = await getConfig(configurationRequests, ctx)
+//     return widgetMaker(event, context)
+// }
 
 /*
 What does closure mean in programming?
@@ -122,13 +122,13 @@ console.log(x) // 2
 
 // * Refactored to Pure function
 let y = 1;
- const pureIncrement = (num) => num += 1;
- console.log(pureIncrement(y)) // 2
- console.log(y) // 1
+const pureIncrement = (num) => num += 1;
+console.log(pureIncrement(y)) // 2
+console.log(y) // 1
 
 
 //  * Impure
-const myArray = [1,2,3];
+const myArray = [1, 2, 3];
 const addToArray = (array, data) => {
     array.push(data);
     return array
@@ -149,3 +149,47 @@ console.log(myArray) // [1,2,3,4]
 // Modifying variables outside the function
 // HTTP Calls
 // console.log
+
+function bad(state) {
+    state.prp = "yes";
+    return state;
+}
+
+function good(state) {
+    let newState = { ...state };
+    newState.prp = "yes";
+    return newState;
+}
+
+console.log(bad('hi'))
+
+
+
+function fun(x) {    // no reference to array in here!
+    x = x + 1;
+    return x;
+}
+
+var array = [1];    // array[0] = 1.
+fun(array[0]);      // outputs 2.
+// fun( 1 ) not fun( array[0] = 1 ).
+console.log(array); // array[0] = 1 still.
+
+//forEach is like a method of an object that is intended to modify that objects state
+// not chainable
+
+
+const items = ['item1', 'item2', 'item3'];
+const copyItems = [];
+
+// before
+for (let i = 0; i < items.length; i++) {
+    copyItems.push(items[i]);
+}
+
+// after
+items.forEach((item) => {
+    copyItems.push(item);
+});
+
+console.log(items)

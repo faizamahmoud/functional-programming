@@ -1,7 +1,9 @@
-const { appendFile } = require("fs");
-const { arrayBuffer } = require("stream/consumers");
 
 //* DIFFERENCE BETWEEN MAP AND FOREACH - ARRAY FUNCTIONS TO LOOOP THROUGH ARRAY
+//* forEach is like a method of an object that is intended to modify that objects state.
+//* map, on the other hand, does not necessarily modify any side effects, and just produces a new array.
+
+
 const arr = [1,2,3,4];
 
 // DOES NOT MODIFY ORIGINAL ARRAY
@@ -80,6 +82,12 @@ Promise.all([
 
 
     // map, reduce, filter, sort
+
+
+
+
+
+
 /**
  * @param {number[]} nums
  * @return {number[]}

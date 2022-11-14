@@ -15,5 +15,12 @@ const deletionDistance = (str1, str2) => {
 
 
 
-console.log(deletionDistance('hiadff', 'hi'))
+// console.log(deletionDistance('hiadff', 'hi'))
 // deletionDistance('hi', 'hi')
+/**
+ * @param {number[]} original
+ * @param {number} m
+ * @param {number} n
+ * @return {number[][]}
+ */
+
