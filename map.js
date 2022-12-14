@@ -1,3 +1,15 @@
+/*
+SYNTAX:
+let newArray = oldArray.map((currentValue, index, array) {
+
+});
+    newArray: The array that is to be returned.
+    oldArray: The map function runs onto every element of this array.
+    currentValue: The current element’s value.
+    index: The current element’s array index.
+    array: The array object to which the current element belongs to.
+*/
+
 
 const s = [23, 65, 98, 5];
 

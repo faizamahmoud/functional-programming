@@ -1,0 +1,23 @@
+{
+  "name": "functional",
+  "version": "1.0.0",
+  "main": "codingchallenges.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/faizamahmoud/functional-programming.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faizamahmoud/functional-programming/issues"
+  },
+  "homepage": "https://github.com/faizamahmoud/functional-programming#readme",
+  "description": "",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
